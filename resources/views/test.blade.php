@@ -30,6 +30,7 @@
   <h5 class="font-sans text-xl font-bold mb-4">
     esta es una prueba
   </h5>
+  
   <!--
   Welcome to Tailwind Play, the official Tailwind CSS playground!
 
