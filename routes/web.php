@@ -28,4 +28,4 @@ Route::middleware([
 });
 
 
-Route::view('test','test');
+Route::view('test','cliente');

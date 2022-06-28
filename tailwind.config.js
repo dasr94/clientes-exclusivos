@@ -10,11 +10,18 @@ module.exports = {
     ],
 
     theme: {
+
+        fontFamily: {
+            'popi': ['Poppins']
+        },
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+        colors: {
+            'nikkei': '#211915'
+        }
     },
 
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
