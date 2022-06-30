@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\LogsController;
+use App\Models\Clientes;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,17 +20,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('agregar_cliente', [ClientesController::class, 'agregar']);
+
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [ClientesController::class, 'ver'])->name('dashboard');
+    Route::get('agregar_cliente', [ClientesController::class, 'agregar'])->name('cliente.agregar');
+    Route::post('guardar_agregar_cliente', [ClientesController::class, 'guardar'])->name('cliente.guardar');
+    Route::post('agregar_log/{id}', [LogsController::class, 'agregar'])->name('guardar.log');
 });
 
+Route::get('descuento/{id}/{slug}', [ClientesController::class, 'card'])->name('card');
 
 Route::view('test','cliente');

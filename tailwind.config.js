@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+const { gray } = require('tailwindcss/colors');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
@@ -20,7 +22,12 @@ module.exports = {
             },
         },
         colors: {
-            'nikkei': '#211915'
+            'nikkei': '#211915',
+            gray: colors.gray,
+            white: colors.white,
+            blue: colors.blue,
+            red: colors.red,
+            white: colors.white
         }
     },
 

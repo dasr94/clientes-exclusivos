@@ -17,6 +17,11 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('cliente.agregar') }}" :active="request()->routeIs('dashboard')">
+                        {{ __('Agregar Cliente') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -142,6 +147,7 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
+        
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
