@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-2 overflow-x-auto">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-2 overflow-x-auto mb-5">
                 {{-- <x-jet-welcome /> --}}
                 <table class="table-auto border-collapse border border-blue-100 ">
                     <thead>

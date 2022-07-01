@@ -29,7 +29,7 @@
   <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass shadow-lg">
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
     <h1 class="text-black text-xl md:text-xl font-bold mb-3 font-popi">¡Bienvenido {{ $cliente->nombre }}!</h1>
-    <p class="text-black font-popi">En Nikkei siempre pensamos en ti por lo que te invitamos a disfrutas en nuestros restaurantes un descuento de:</p>
+    <p class="text-black font-popi">En Nikkei siempre pensamos en ti por lo que te invitamos a disfrutar en nuestros restaurantes un descuento de:</p>
     <p class="text-black font-popi text-6xl text-center p-4 font-bold">{{ round($cliente->descuento) }}%</p>
     <p class="text-black font-popi">En el consumo del menú a precio regular.</p> 
     <img src="{{ asset('img/logo-sm-black.png') }}" class="w-2/5 md:w-1/5 mx-auto mt-4 mb-2" alt="Logo nikkei">
