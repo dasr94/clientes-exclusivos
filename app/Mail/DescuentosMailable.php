@@ -12,15 +12,16 @@ class DescuentosMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = "Descuento Especial para ti de Nikkei";
+    public $info;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($info)
     {
-        //
+        $this->info = $info;
     }
 
     /**

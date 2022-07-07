@@ -16,6 +16,7 @@
                             <th class="p-2">DUI</th>
                             <th class="p-2">Slug</th>
                             <th class="p-2">Correo</th>
+                            <th class="p-2">Caducidad</th>
                             <th class="p-2">Descuento</th>
                             <th class="p-2">Card</th>
                         </tr>
@@ -27,6 +28,7 @@
                             <td class="border p-2 border-blue-300">{{ $cliente->dui }}</td>
                             <td class="border p-2 border-blue-300">{{ $cliente->slug }}</td>
                             <td class="border p-2 border-blue-300">{{ $cliente->correo }}</td>
+                            <td class="border p-2 border-blue-300">{{ $cliente->caducidad }}</td>
                             <td class="border p-2 border-blue-300">{{ $cliente->descuento }}%</td>
                             <td class="border p-2 border-blue-300"> <a href="{{ route('card', [$cliente->id, $cliente->slug])  }}">Ver</a> </td>
                         </tr>

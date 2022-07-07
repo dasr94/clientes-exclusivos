@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('slug', 250);
             $table->string('is_active', 2)->default('1');
             $table->date('caducidad');
+            $table->string('tipo');
+            $table->string('empresa', 250)->nullable();
+
             $table->double('descuento', 4, 2);
             $table->timestamps();
         });

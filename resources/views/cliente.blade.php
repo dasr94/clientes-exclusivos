@@ -18,16 +18,23 @@
     .imagen {
       background-image: url("{{ asset('img/fondo-card.jpg') }}")
     }
+    .bg-especial {
+      background: #211915;
+    }
   </style>
 
   <!-- Scripts -->
   <script src="{{ asset('js/app.js') }}" defer></script>
+  
+
 
 </head>
 <body class="bg-nikkei min-h-screen flex flex-col flex-nowrap justify-center content-center  imagen bg-no-repeat bg-center bg-cover md:bg-center">
 
   <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass shadow-lg">
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
+    {{-- <div id="qrcode"></div> --}}
+    <img src="{{asset('/qrcode/' . $cliente->id . "_" . $cliente->slug . '.png')}}" style="width: 100px;" alt="">
     <h1 class="text-black text-xl md:text-xl font-bold mb-3 font-popi">¡Bienvenido {{ $cliente->nombre }}!</h1>
     <p class="text-black font-popi">En Nikkei siempre pensamos en ti por lo que te invitamos a disfrutar en nuestros restaurantes un descuento de:</p>
     <p class="text-black font-popi text-6xl text-center p-4 font-bold">{{ round($cliente->descuento) }}%</p>
@@ -52,6 +59,7 @@
 
   </div> 
 
+
   @if (Auth::guest())
 
   @else
@@ -64,16 +72,22 @@
         </div>
         <div>
           <label for="descuento">descuento</label>
-          <input type="text" name="descuento" id="descuento" value="{{ $cliente->descuento }}" class="block mt-1 w-full">
+          <input type="text" name="descuento" id="descuento" value="{{ $cliente->descuento }}" class="block mt-1 w-full" disabled>
         </div>
-        <button class="text-white bg-red-500 rounded-md text-center w-2/5 mx-auto p-4 m-4"> Crear Log </button>
+        <button class="text-white bg-red-500 rounded-md text-center w-2/5 mx-auto p-4 m-4"> Registrar </button>
       </form>
     </div>
   @endif
   
 
-
-
+  <script src="{{ asset('js/qrcode.js') }}" ></script>
+  <script>
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      width : 100,
+      height : 100
+    });
+    qrcode.makeCode('{{url()->current()}}');
+  </script>
   
 </body>
 </html>

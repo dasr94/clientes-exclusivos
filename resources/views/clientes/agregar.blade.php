@@ -9,7 +9,7 @@
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
               {{-- <x-jet-welcome /> --}}
-              <form action="{{ route('cliente.guardar') }}" method="post">
+              <form action="{{ route('cliente.guardar_VIP') }}" method="post">
                 @csrf
                 <div class="grid grid-cols-4 gap-4">
                   <div>

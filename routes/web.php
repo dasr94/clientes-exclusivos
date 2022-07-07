@@ -32,7 +32,8 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [ClientesController::class, 'ver'])->name('dashboard');
     Route::get('agregar_cliente', [ClientesController::class, 'agregar'])->name('cliente.agregar');
-    Route::post('guardar_agregar_cliente', [ClientesController::class, 'guardar'])->name('cliente.guardar');
+    Route::post('guardar_agregar_cliente', [ClientesController::class, 'guardar_VIP'])->name('cliente.guardar_VIP');
+    Route::post('guardar_agregar_cliente_10', [ClientesController::class, 'guardar_10'])->name('guardar_10');
     Route::post('agregar_log/{id}', [LogsController::class, 'agregar'])->name('guardar.log');
 });
 
@@ -40,8 +41,14 @@ Route::get('descuento/{id}/{slug}', [ClientesController::class, 'card'])->name('
 Route::view('crear_cliente', 'agregar');
 
 Route::get('email', function(){
-    $correo = new DescuentosMailable;
+    $info = [
+        "nombre" => "Daniel",
+        "apellido" => "Sanchez",
+        "img" => "qrcode"
+    ];
+    $correo = new DescuentosMailable($info);
     Mail::to('dsanchez.atsv@gmail.com')->send($correo);
     return "mensaje enviado";
 });
 Route::view('test','cliente');
+Route::view('notif_mail', 'mails.notificacion_testing');

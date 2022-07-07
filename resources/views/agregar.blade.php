@@ -29,7 +29,7 @@
   <div class="glass container mx-auto w-4/5 md:w-3/5 overflow-hidden shadow-xl sm:rounded-lg p-4">
     {{-- <x-jet-welcome /> --}}
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
-    <form action="{{ route('cliente.guardar') }}" method="post">
+    <form action="{{ route('cliente.guardar_10') }}" method="post">
       @csrf
       <div class="grid grid-cols-1 gap-4">
         <div>
