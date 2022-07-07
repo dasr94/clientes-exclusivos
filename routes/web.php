@@ -5,6 +5,9 @@ use App\Http\Controllers\LogsController;
 use App\Models\Clientes;
 use Illuminate\Support\Facades\Route;
 
+use App\Mail\DescuentosMailable;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,5 +37,11 @@ Route::middleware([
 });
 
 Route::get('descuento/{id}/{slug}', [ClientesController::class, 'card'])->name('card');
+Route::view('crear_cliente', 'agregar');
 
+Route::get('email', function(){
+    $correo = new DescuentosMailable;
+    Mail::to('dsanchez.atsv@gmail.com')->send($correo);
+    return "mensaje enviado";
+});
 Route::view('test','cliente');

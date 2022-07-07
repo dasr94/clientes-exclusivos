@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('nombre', 250);
-            $table->string('dui', 250);
+            $table->string('dui', 250)->nullable();
             $table->string('correo', 250);
             $table->string('slug', 250);
+            $table->string('is_active', 2)->default('1');
+            $table->date('caducidad');
             $table->double('descuento', 4, 2);
             $table->timestamps();
         });
