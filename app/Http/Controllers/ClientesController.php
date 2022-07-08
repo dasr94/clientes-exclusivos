@@ -52,7 +52,7 @@ class ClientesController extends Controller
         $url = url("") . "/descuento/" . $id_cliente . "/" . $slug;
         QrCode::format('png')->size(300)->generate($url, '../public/qrcode/'. $id_cliente . "_" . $slug . '.png');
         $correo = new DescuentosMailable($cliente);
-        Mail::to('dsanchez.atsv@gmail.com')->send($correo);
+        Mail::to($request->correo)->send($correo);
         
 
         return redirect('dashboard');
