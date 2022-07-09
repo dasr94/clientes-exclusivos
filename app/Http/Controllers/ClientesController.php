@@ -66,10 +66,17 @@ class ClientesController extends Controller
         $cliente->descuento = $request->descuento;
         $cliente->caducidad = date('Y-m-d', strtotime('+90 day'));
         $cliente->tipo = "2";
+        $cliente->empresa = "Panamericana";
         $slug = str_replace(" ", "-", $request->nombre);
         $cliente->slug = $slug;
         $cliente->save();
-        return redirect('dashboard');
+        $id_cliente = $cliente->id;
+        //QrCode::format('svg')->size(700)->color(255,0,0)->generate('Desarrollo libre Andres', '../public/qrcode/qrcode2.svg');
+        $url = url("") . "/descuento/" . $id_cliente . "/" . $slug;
+        QrCode::format('png')->size(300)->generate($url, '../public/qrcode/'. $id_cliente . "_" . $slug . '.png');
+        $correo = new DescuentosMailable($cliente);
+        Mail::to($request->correo)->send($correo);
+        return redirect($url);
     }
 
     public function card($id, $slug){

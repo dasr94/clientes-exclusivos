@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
             $table->double('total', 10, 2);
-            $table->double('descuento', 4, 2);
+            $table->string('descuento', 250);
             $table->foreignId('cliente_id')->constrained();
             $table->timestamps();
         });

@@ -11,7 +11,7 @@
               {{-- <x-jet-welcome /> --}}
               <form action="{{ route('cliente.guardar_VIP') }}" method="post">
                 @csrf
-                <div class="grid grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
                   <div>
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="block mt-1 w-full">

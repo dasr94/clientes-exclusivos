@@ -52,10 +52,10 @@
                   <td align="center">
                     <div style="background-color: #b8242e; border-radius: 10px 10px 0px 0px; padding: 10px 40px;">
                       <div style="margin: 0 auto; text-align: center;">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
+                        <img src="{{ asset('img/facebook-white-24.png') }}"  alt="facebook">
+                        <img src="{{ asset('img/instagram-white-24.png') }}"  alt="instragram">
+                        <img src="{{ asset('img/whatsapp-white-24.png') }}"  alt="whatsapp">
+                        <img src="{{ asset('img/location-pin-white-24.png') }}" style="width: 24px;" alt="location">
                       </div>
                       <a href="https://nikkeisv.com" style="color: white; text-decoration: none;">nikkeisv.com</a>
                     </div>

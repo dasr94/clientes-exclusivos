@@ -147,7 +147,11 @@
                 {{ __('Dashboard') }}
             </x-jet-responsive-nav-link>
         </div>
-        
+        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <x-jet-responsive-nav-link href="{{ route('cliente.agregar') }}" :active="request()->routeIs('dashboard')">
+                {{ __('Agregar Cliente') }}
+            </x-jet-responsive-nav-link>
+        </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">

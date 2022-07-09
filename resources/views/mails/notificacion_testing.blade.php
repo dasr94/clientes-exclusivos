@@ -40,7 +40,7 @@
                   <td align="center"><h3 style="font-size: 26px;">VIP</h3></td>
                 </tr>
                 <tr>
-                  <td align="center"><p style="margin-top: 0px; text-align: center; font-size: 15px; line-height: 1.5em;">Bienvenido al grupo selecto de Nikkei, has recibido <strong style="font-weight: 500;">20%</strong> de descuento en tus compras, recuerda presentar este QR al momento de tu compra</p></td>
+                  <td align="center"><p style="margin-top: 0px; text-align: center; font-size: 15px; line-height: 1.5em;">Bienvenido al grupo selecto de Nikkei, has recibido <strong style="font-weight: 500;">20%</strong> de descuento en tu consumo, recuerda presentar este QR al momento de tu compra</p></td>
                 </tr>
                 <tr>
                   <td align="center"><img src="{{asset('/qrcode/5_Daniel-Antonio-Sánchez-Romero.png')}}" style="width: 80%; max-width: 300px;" alt=""></td>
@@ -52,10 +52,10 @@
                   <td align="center">
                     <div style="background-color: #b8242e; border-radius: 10px 10px 0px 0px; padding: 10px 40px;">
                       <div style="margin: 0 auto; text-align: center;">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
+                        <img src="{{ asset('img/facebook-white-24.png') }}"  alt="facebook">
+                        <img src="{{ asset('img/instagram-white-24.png') }}"  alt="instragram">
+                        <img src="{{ asset('img/whatsapp-white-24.png') }}"  alt="whatsapp">
+                        <img src="{{ asset('img/location-pin-white-24.png') }}" style="width: 24px;" alt="location">
                       </div>
                       <a href="https://nikkeisv.com" style="color: white; text-decoration: none;">nikkeisv.com</a>
                     </div>
