@@ -16,7 +16,7 @@
       src: url( {{ asset('fonts/Mojita.ttf') }} );
     }
     .imagen {
-      background-image: url("{{ asset('img/fondo-card.jpg') }}")
+      background-image: url("{{ asset('img/fondo-card-desayuno.jpg') }}")
     }
     .bg-especial {
       background: #211915;
@@ -33,9 +33,10 @@
 
   <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass shadow-lg">
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
-    <p>¡Bienvenido a Nikkei!, Clase del 96, felicidades, has recibido un 10% en tu proxima compra en nikkei, solo tienes que llenar este formulario y lo tendrás disponible, recuerda presentar la tarjeta cuando te presentes.</p>
+    <p>¡Bienvenidos a Nikkei!, agradecemos tu visita, al completar el siguiente formulario, te brindaremos una entrada totalmente gratis en tu proxima compra.</p>
+    <hr class="px-4"> 
     {{-- <div id="qrcode"></div> --}}
-    <form action="{{ route('cliente.guardar_10') }}" method="post">
+    <form action="{{ route('cliente.guardar_desayuno') }}" method="post">
       @csrf
       <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
         <div>
@@ -51,7 +52,7 @@
           <input type="text" name="correo" id="correo" class="rounded-md block mt-1 w-full">
         </div>
         <div>
-          <input type="hidden" value="10" name="descuento" id="descuento" class="rounded-md block mt-1 w-full">
+          <input type="hidden" value="Entrada" name="descuento" id="descuento" class="rounded-md block mt-1 w-full">
           <button class="mt-4 px-4 py-2 rounded-md bg-red-500 text-white">Guardar</button> 
         </div> 
       </div>

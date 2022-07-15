@@ -40,7 +40,15 @@
                   <td align="center"><h3 style="font-size: 26px;">VIP</h3></td>
                 </tr>
                 <tr>
-                  <td align="center"><p style="margin-top: 0px; text-align: center; font-size: 15px; line-height: 1.5em;">Bienvenido al grupo selecto de Nikkei, has recibido {{ $info['descuento'] }}% de descuento en tus compras, recuerda presentar este QR al momento de tu compra</p></td>
+                  <td align="center">
+                    <p style="margin-top: 0px; text-align: center; font-size: 15px; line-height: 1.5em;">
+                      @if ($info['tipo'] != 7 )
+                        Bienvenido al grupo selecto de Nikkei, has recibido {{ $info['descuento'] }}% de descuento en tus compras, recuerda presentar este QR al momento de tu compra
+                      @else
+                        ¡Felicidades has recibido una {{ $info['descuento'] }} en tu proxima compra!
+                      @endif
+                    </p>
+                  </td>
                 </tr>
                 <tr>
                   <td align="center"><img src="{{asset('/qrcode/' . $info['id'] . "_" . $info['slug'] . '.png')}}" style="width: 80%; max-width: 300px;" alt=""></td>

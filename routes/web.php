@@ -42,6 +42,7 @@ Route::view('crear_cliente', 'agregar');
 
 
 Route::post('guardar_agregar_cliente_10', [ClientesController::class, 'guardar_10'])->name('cliente.guardar_10');
+Route::post('guardar_agregar_cliente_desayuno', [ClientesController::class, 'guardar_desayuno'])->name('cliente.guardar_desayuno');
 
 Route::get('email', function(){
     $info = [
@@ -56,4 +57,5 @@ Route::get('email', function(){
 Route::view('test','cliente');
 Route::view('notif_mail', 'mails.notificacion_testing');
 
-Route::view('panamericana', 'clientes.descuentos.panamericana');
+Route::view('class96', 'clientes.descuentos.panamericana');
+Route::view('desayunos', 'clientes.descuentos.desayunos');

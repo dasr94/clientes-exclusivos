@@ -34,6 +34,8 @@ return new class extends Migration
              * 3 => Campaña Lealtad (10%)
              * 4 => Campaña Lealtad (Postre)
              * 5 => Premios Varios
+             * 6 => panamericana - class96
+             * 7 => desayuno - entrada gratis
              */
             $table->string('tipo');
             // ¿a que empresa pertenece?, no siempre pertenecera a una empresa

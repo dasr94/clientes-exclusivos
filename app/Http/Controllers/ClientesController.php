@@ -16,6 +16,9 @@ class ClientesController extends Controller
     public function ver(){
         $clientes = Clientes::all();
         $logs = Logs::all();
+        foreach($logs as $log){
+            $log->cliente;
+        }
         return view('dashboard', compact('clientes', 'logs'));
     }
 
@@ -65,8 +68,29 @@ class ClientesController extends Controller
         $cliente->correo = $request->correo;
         $cliente->descuento = $request->descuento;
         $cliente->caducidad = date('Y-m-d', strtotime('+90 day'));
-        $cliente->tipo = "2";
-        $cliente->empresa = "Panamericana";
+        $cliente->tipo = "6";
+        $cliente->empresa = "Panamericana - class96";
+        $slug = str_replace(" ", "-", $request->nombre);
+        $cliente->slug = $slug;
+        $cliente->save();
+        $id_cliente = $cliente->id;
+        //QrCode::format('svg')->size(700)->color(255,0,0)->generate('Desarrollo libre Andres', '../public/qrcode/qrcode2.svg');
+        $url = url("") . "/descuento/" . $id_cliente . "/" . $slug;
+        QrCode::format('png')->size(300)->generate($url, '../public/qrcode/'. $id_cliente . "_" . $slug . '.png');
+        $correo = new DescuentosMailable($cliente);
+        Mail::to($request->correo)->send($correo);
+        return redirect($url);
+    }
+
+    public function guardar_desayuno(Request $request){
+        $cliente = new Clientes();
+        $cliente->nombre = $request->nombre;
+        $cliente->dui = $request->dui;
+        $cliente->correo = $request->correo;
+        $cliente->descuento = $request->descuento;
+        $cliente->caducidad = date('Y-m-d', strtotime('+90 day'));
+        $cliente->tipo = "7";
+        $cliente->empresa = "Desayuno";
         $slug = str_replace(" ", "-", $request->nombre);
         $cliente->slug = $slug;
         $cliente->save();

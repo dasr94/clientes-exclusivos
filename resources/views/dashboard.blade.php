@@ -50,7 +50,7 @@
                         @foreach($logs as $log)
                         <tr>
                             <td class="border p-2 border-blue-300">{{ $log->total }}</td>
-                            <td class="border p-2 border-blue-300">{{ $log->cliente_id }}</td>
+                            <td class="border p-2 border-blue-300">{{ $log->cliente->nombre }}</td>
                             <td class="border p-2 border-blue-300">{{ $log->descuento }}</td>
                         </tr>
                         @endforeach
