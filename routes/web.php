@@ -34,6 +34,7 @@ Route::middleware([
     Route::get('agregar_cliente', [ClientesController::class, 'agregar'])->name('cliente.agregar');
     Route::post('guardar_agregar_cliente', [ClientesController::class, 'guardar_VIP'])->name('cliente.guardar_VIP');
     Route::post('agregar_log/{id}', [LogsController::class, 'agregar'])->name('guardar.log');
+    Route::view('promociones_activas', 'promociones_activas')->name('promociones_activas');
 });
 
 
@@ -57,5 +58,5 @@ Route::get('email', function(){
 Route::view('test','cliente');
 Route::view('notif_mail', 'mails.notificacion_testing');
 
-Route::view('class96', 'clientes.descuentos.panamericana');
-Route::view('desayunos', 'clientes.descuentos.desayunos');
+Route::view('class96', 'clientes.descuentos.panamericana')->name('promocion_panamericana');
+Route::view('desayunos', 'clientes.descuentos.desayunos')->name('promocion_desayunos');

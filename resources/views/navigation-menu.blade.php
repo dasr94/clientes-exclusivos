@@ -18,8 +18,13 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('cliente.agregar') }}" :active="request()->routeIs('dashboard')">
+                    <x-jet-nav-link href="{{ route('cliente.agregar') }}" :active="request()->routeIs('cliente.agregar')">
                         {{ __('Agregar Cliente') }}
+                    </x-jet-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('promociones_activas') }}" :active="request()->routeIs('promociones_activas')">
+                        {{ __('Promociones Activas') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -150,6 +155,11 @@
         <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
             <x-jet-responsive-nav-link href="{{ route('cliente.agregar') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Agregar Cliente') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            <x-jet-responsive-nav-link href="{{ route('promociones_activas') }}" :active="request()->routeIs('promociones_activas')">
+                {{ __('Promociones Activas') }}
             </x-jet-responsive-nav-link>
         </div>
 
