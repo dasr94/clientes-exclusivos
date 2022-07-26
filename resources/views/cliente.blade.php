@@ -21,6 +21,15 @@
     .bg-especial {
       background: #211915;
     }
+    .glass-v2 {
+      background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0));
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      -moz-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 32px;
+    }
   </style>
 
   <!-- Scripts -->
@@ -31,7 +40,7 @@
 </head>
 <body class="bg-nikkei min-h-screen flex flex-col flex-nowrap justify-center content-center  imagen bg-no-repeat bg-center bg-cover md:bg-center">
 
-  <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass shadow-lg">
+  <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass-v2 shadow-lg mt-3">
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
     {{-- <div id="qrcode"></div> --}}
     <h1 class="text-black text-xl md:text-xl font-bold mb-3 font-popi">¡Bienvenido {{ $cliente->nombre }}!</h1>
@@ -43,7 +52,7 @@
         <img src="{{ asset('img/logo-sm-black.png') }}" class="w-4/5 md:w-3/5 mx-auto mb-4 sm:mb-0" alt="Logo nikkei">
       </div>
       <div class="basis-1/3">
-        <img src="{{ asset('/qrcode/' . $cliente->id . "_" . $cliente->slug . '.png') }}" class=" -mb-0 sm:-mb-8 shadow-md" alt="">
+        <img src="{{ asset('/qrcode/' . $cliente->id . "_" . $cliente->slug . '.png') }}" class=" -mb-0 sm:-mb-8 drop-shadow-lg" alt="">
       </div>
       <div class="basis-1/3">
         <div class="flex flex-row flex-nowrap justify-end content-center sm:content-end mt-4 sm:mt-0">
