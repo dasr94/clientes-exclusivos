@@ -68,8 +68,8 @@ class ClientesController extends Controller
         $cliente->correo = $request->correo;
         $cliente->descuento = $request->descuento;
         $cliente->caducidad = date('Y-m-d', strtotime('+90 day'));
-        $cliente->tipo = "6";
-        $cliente->empresa = "Panamericana - class96";
+        $cliente->tipo = "8";
+        $cliente->empresa = "Promoción Especial";
         $slug = str_replace(" ", "-", $request->nombre);
         $cliente->slug = $slug;
         $cliente->save();

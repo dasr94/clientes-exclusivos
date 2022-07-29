@@ -33,7 +33,7 @@
 
   <div class="container mx-auto w-4/5 md:w-3/5 p-4 glass shadow-lg">
     <img src="{{ asset('img/favicon.png') }}" class="w-1/5 md:w-1/6 mb-2" alt="Logo nikkei">
-    <p>¡Bienvenido a Nikkei!, Clase del 96, felicidades, has recibido un 10% en tu proxima compra en nikkei, solo tienes que llenar este formulario y lo tendrás disponible, recuerda presentar la tarjeta cuando te presentes.</p>
+    <p>¡Bienvenido a Nikkei!, Gracias por tu fidelidad, te hemos obsequiado un desayuno para tu proxima visita en nikkei, solo tienes que llenar este formulario y lo tendrás disponible, recuerda presentar la tarjeta cuando te presentes.</p>
     {{-- <div id="qrcode"></div> --}}
     <form action="{{ route('cliente.guardar_10') }}" method="post">
       @csrf
@@ -51,7 +51,7 @@
           <input type="text" name="correo" id="correo" class="rounded-md block mt-1 w-full">
         </div>
         <div>
-          <input type="hidden" value="10" name="descuento" id="descuento" class="rounded-md block mt-1 w-full">
+          <input type="hidden" value="Desayuno Gratis" name="descuento" id="descuento" class="rounded-md block mt-1 w-full">
           <button class="mt-4 px-4 py-2 rounded-md bg-red-500 text-white">Guardar</button> 
         </div> 
       </div>

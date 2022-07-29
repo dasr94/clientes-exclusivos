@@ -45,7 +45,7 @@
     {{-- <div id="qrcode"></div> --}}
     <h1 class="text-black text-xl md:text-xl font-bold mb-3 font-popi">¡Bienvenido {{ $cliente->nombre }}!</h1>
     <p class="text-black font-popi">En Nikkei siempre pensamos en ti por lo que te invitamos a disfrutar en nuestros restaurantes un descuento de:</p>
-    <p class="text-black font-popi text-6xl text-center p-4 font-bold">{{ $cliente->descuento }} @if ($cliente->tipo != 7 )  %   @endif </p>
+    <p class="text-black font-popi text-6xl text-center p-4 font-bold">{{ $cliente->descuento }} @if ($cliente->tipo != 7 || $cliente->tipo != 8  )  %   @endif </p>
     <p class="text-black font-popi">En el consumo del menú a precio regular. Recuerda presentar el codigo QR al momento de presentarte</p> 
     <div class="flex flex-nowrap md:flex-nowrap flex-col sm:flex-row justify-between mt-6 items-center sm:items-end">
       <div class="basis-1/3">
